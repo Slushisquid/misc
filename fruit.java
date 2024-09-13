@@ -19,8 +19,6 @@ class Main {
       System.out.println(entry.getKey() + ": " + entry.getValue());
     }
   }
-
-
 }
 
   //thank you bestie Katie :)))))))))))))

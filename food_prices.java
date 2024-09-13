@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class food_prices{
-    public static void main (string[] args){
+    public static void main (String[] args){
         double appleprice_LB = 3.00;
         double bananaprice_LB = 0.59;
         double cerealprice_box = 3.99;
@@ -14,19 +14,19 @@ public class food_prices{
         int milkcount = 0;
         int candycount = 0;
 
+        Scanner keyboard = new Scanner(System.in);
+
         System.out.println("Quinn: Welcome to Quinn's (very small) grocery store!");
         System.out.println("Quinn: Would you like to buy something today?");
         System.out.println("Type 0 for no. Type 1 for yes.");
-        boolean customer = true;
-        int notaboolean = keyboard.nextLine();
-        if (notabolean == 0){
+        int notaboolean = keyboard.nextInt();
+        if (notaboolean == 0){
             System.out.println("Quinn: Well, what are you doing here, then?");
         } else {
             System.out.println("Quinn: Great! Oh, wow, it's nice to have a customer...");
             System.out.println("Quinn: (They usually want more than the 5 items we sell... how absurd!)");
             System.out.println("Quinn: So, would you like to buy an apple? Or perhaps a pound of them?");
             System.out.println("Type 0 for no. Type 1 for yes.");
-            boolean apple = true;
             int apples = keyboard.nextInt();
             if (apples == 1){
                 System.out.println("Quinn: Awesome! How many pounds would you like?");
@@ -50,7 +50,7 @@ public class food_prices{
         if (cerealcount == 0){
             System.out.println("Quinn: Okay... No cereal for you then.");
             System.out.println("Quinn: Um...");
-            System.out.println("Quinn: Well, how about some milk?")
+            System.out.println("Quinn: Well, how about some milk?");
         } else {
             System.out.println("Quinn: Oh, great! Thank you, thank you!");
             System.out.println("Quinn: Now, how about some milk for your cereal?");
@@ -78,7 +78,7 @@ public class food_prices{
         }
         System.out.println("Quinn: Well, that's all the items in my store.");
         System.out.println("Quinn: (You really don't need anything else, do you?)");
-        System.out.println("Quinn: Well, it's time for checkout.");
+        System.out.println("Quinn: Okay, it's time for checkout.");
 
         double appletotal = (appleprice_LB * applecount);
         double bananatotal = (bananaprice_LB * bananacount);
@@ -87,9 +87,16 @@ public class food_prices{
         double candytotal = (candybarprice_single * candycount);
         double totalprice = (appletotal + bananatotal + cerealtotal + milktotal + candytotal);
         
-        System.out.println("Quinn scans all of your items.")
+        System.out.println("Quinn scans all of your items.");
         System.out.println("Quinn presses a few buttons on the register.");
-        System.out.println("Quinn: Ok! Your total comes to $" + totalprice "!");
+        System.out.println("Quinn: Ok! Your total comes to $" + totalprice + "!");
+
+        if (totalprice == 0){
+            System.out.println("Quinn: Wait, you didn't buy anything!");
+            System.out.println("Quinn: Why did you even come to my store?");
+            System.out.println("You shrug and walk out.");
+        } else {
+
         System.out.println("What payment method will you be using today?");
         System.out.println("Enter 0 for cash. Enter 1 for card. Enter 2 for postage stamps. Enter 3 to not pay.");
         int payment_method = keyboard.nextInt();
@@ -127,8 +134,10 @@ public class food_prices{
             System.out.println("Quinn gives you the middle finger and begins to attempt to sell the store.");
             System.out.println("You heartless bastard. He needed that money.");
             System.out.println("You then get run over by an 18 wheeler truck.");
-            System.out.println("You deserved it. Bitch.")
+            System.out.println("You deserved it. Bitch.");
         }
         }
+        }
+      keyboard.close();
     }
 }

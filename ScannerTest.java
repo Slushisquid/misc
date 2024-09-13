@@ -24,8 +24,6 @@ public class ScannerTest
 			} else {
 				System.out.println("Don't you have a job you should be doing? Are you slacking off?");
 			}
-
-    // Close out the Scanner
     keyboard.close();
-		}
 	}
+}

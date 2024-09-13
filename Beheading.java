@@ -7,5 +7,5 @@ public class Beheading
         System.out.println("   -|-");
         System.out.println("   /\\");
         System.out.println(" BEHEADED MAN <3");
-}
+    }
 }

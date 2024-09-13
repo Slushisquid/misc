@@ -3,13 +3,14 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class groceries{
-    public static void main (string[] args){
+    public static void main (String[] args){
     	Scanner keyboard = new Scanner(System.in);
+        System.out.println("Friendly reminder not to add more than 2,147,483,647 of any item to the list. Please.");
         HashMap<String, Integer> groceries = new HashMap<>();
         boolean more = true;
         while (more == true){
             System.out.println("What would you like to add to the list?");
-            String item = keyboard.nextLine();
+            String item = keyboard.next();
             if (groceries.containsKey(item)) {
                 System.out.println("You already added this item!");
             } else {
@@ -24,11 +25,11 @@ public class groceries{
                 }
             }
         }
+    System.out.println("Here is your grocery list: ");
     for (Map.Entry<String, Integer> entry : groceries.entrySet()) {
-      System.out.println("Here is your grocery list: ");
       System.out.println(entry.getKey() + ": " + entry.getValue());
-      System.out.println("Have fun at the grocery store!");
     }
+    System.out.println("Have fun at the grocery store!");
     keyboard.close();
     }
 }
