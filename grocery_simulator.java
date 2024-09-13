@@ -1,18 +1,20 @@
 import java.util.Scanner;
 
-public class food_prices{
+public class grocery_simulator{
     public static void main (String[] args){
         double appleprice_LB = 3.00;
         double bananaprice_LB = 0.59;
         double cerealprice_box = 3.99;
         double milkprice_gallon = 4.01;
         double candybarprice_single = 1.79;
+        double sushiprice_roll = 5.40;
 
         int applecount = 0;
         int bananacount = 0;
         int cerealcount = 0;
         int milkcount = 0;
         int candycount = 0;
+        int sushicount = 0;
 
         Scanner keyboard = new Scanner(System.in);
 
@@ -24,19 +26,16 @@ public class food_prices{
             System.out.println("Quinn: Well, what are you doing here, then?");
         } else {
             System.out.println("Quinn: Great! Oh, wow, it's nice to have a customer...");
-            System.out.println("Quinn: (They usually want more than the 5 items we sell... how absurd!)");
+            System.out.println("Quinn: (They usually want more than the 6 items we sell... how absurd!)");
             System.out.println("Quinn: So, would you like to buy an apple? Or perhaps a pound of them?");
-            System.out.println("Type 0 for no. Type 1 for yes.");
-            int apples = keyboard.nextInt();
-            if (apples == 1){
-                System.out.println("Quinn: Awesome! How many pounds would you like?");
-                System.out.println("Type the integer amount of pounds you would like.");
-                int applesbought = keyboard.nextInt();
-                if (applesbought == 0){
-                    System.out.println("Quinn: Wait, I thought you said you wanted some apples.");
-                } else {
-                    applecount = applesbought;
-                }
+
+            System.out.println("Quinn: Awesome! How many pounds would you like?");
+            System.out.println("Type the integer amount of pounds you would like.");
+            int applesbought = keyboard.nextInt();
+            if (applesbought == 0){
+                System.out.println("Quinn: Wait, I thought you said you wanted some apples.");
+            } else {
+                 applecount = applesbought;
             }
         System.out.println("Quinn: OK, what about bananas? How many pounds of those would you like?");
         System.out.println("Enter the number of pounds of bananas you would like.");
@@ -76,6 +75,11 @@ public class food_prices{
         if (candycount == 0){
             System.out.println("Quinn: Ah, I see, you're eating healthy.");
         }
+        System.out.println("Quinn: And we have sushi here, too! It was requested by a friend, haha.");
+        System.out.println("Quinn: Do you... uh... want any?");
+        System.out.println("Enter the number of sushi rolls you would like.");
+        sushicount = keyboard.nextInt();
+
         System.out.println("Quinn: Well, that's all the items in my store.");
         System.out.println("Quinn: (You really don't need anything else, do you?)");
         System.out.println("Quinn: Okay, it's time for checkout.");
@@ -85,7 +89,8 @@ public class food_prices{
         double cerealtotal = (cerealprice_box * cerealcount);
         double milktotal = (milkprice_gallon * milkcount);
         double candytotal = (candybarprice_single * candycount);
-        double totalprice = (appletotal + bananatotal + cerealtotal + milktotal + candytotal);
+        double sushitotal = (sushiprice_roll * sushicount);
+        double totalprice = (appletotal + bananatotal + cerealtotal + milktotal + candytotal + sushitotal);
         
         System.out.println("Quinn scans all of your items.");
         System.out.println("Quinn presses a few buttons on the register.");
