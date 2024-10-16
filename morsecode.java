@@ -8,8 +8,8 @@ public class morsecode
 	{
 
     Scanner keyboard = new Scanner(System.in);
-
-      while ( 0 == 0 ){
+      int shutupcomputer = 0;
+      while ( shutupcomputer == 0 ){
 
         System.out.println("Enter a word!");
 
